@@ -3,7 +3,7 @@
 # List.create(title: 'doce',desc: 'Pirulito do chaves')
 10.times do
   List.create(
-    title: Faker::Hipster.word,
+    title: Faker::Color.color_name,
     desc: Faker::Hipster.sentence 
   )
 end
