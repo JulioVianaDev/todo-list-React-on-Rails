@@ -34,11 +34,21 @@ function Lists() {
       })
       .catch(err=>console.log("erro no edit: ",err))
   }
+
+  const deleteList=(id)=>{
+    axios.delete(`/api/lists/${id}`)
+      .then(res=>{
+        setLists(lists.filter(l=>l.id !== id))
+        alert(res.data.message)
+      })
+      .catch(err=>console.log("erro no delete: ",err))
+  }
   return (
     <>
       <ListForm addList={addList}/>
       <AllList lists={lists}
         editList={editList}
+        deleteList={deleteList}
       />
       
     </>

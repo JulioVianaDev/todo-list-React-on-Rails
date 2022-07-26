@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import ListForm from './ListForm'
-function List({id,title,desc,created_at, editList}) {
+function List({id,title,desc,created_at, editList,deleteList}) {
   const [editing,setEditing] = useState(false)
   return (
     <>
@@ -23,6 +23,8 @@ function List({id,title,desc,created_at, editList}) {
           <h3>desc: {desc} </h3>
           <h3>created_at: {created_at} </h3>
           <button onClick={()=>setEditing(true)}>Edit</button>
+          <button onClick={()=>deleteList(id)}>Deletar</button>
+          <hr/>
         </>
       }
     </>
