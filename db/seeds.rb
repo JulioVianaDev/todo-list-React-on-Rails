@@ -18,6 +18,7 @@ Todo.delete_all
       complete: Faker::Boolean.boolean,
       list_id: @list.id
     )
+    
   end
 end
 
