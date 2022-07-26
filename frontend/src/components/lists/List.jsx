@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import ListForm from './ListForm'
+import { Link } from 'react-router-dom'
 function List({id,title,desc,created_at, editList,deleteList}) {
   const [editing,setEditing] = useState(false)
   return (
@@ -24,6 +25,7 @@ function List({id,title,desc,created_at, editList,deleteList}) {
           <h3>created_at: {created_at} </h3>
           <button onClick={()=>setEditing(true)}>Edit</button>
           <button onClick={()=>deleteList(id)}>Deletar</button>
+          <Link to={`/${id}/todos`}>Todos</Link>
           <hr/>
         </>
       }
