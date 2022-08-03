@@ -1,25 +1,44 @@
-# List.create(title: 'sentimento',desc: 'Estou com muita fome')
-# List.create(title: 'linguagem',desc: 'gosto muito de React')
-# List.create(title: 'doce',desc: 'Pirulito do chaves')
-List.delete_all
-Todo.delete_all
-@nums = [ 1,2,3,4,5]
+#List.create( title: 'Grocery', desc: 'Food for the week')
+# List.create( title: 'Office', desc: 'Office supplies needed')
+# List.create( title: 'Bunker', desc: 'Meal prep')
 
+#  delete all children before we delete parent
+Note.delete_all
+Todo.delete_all
+# Delete any list that was already there, optional, mainly for testing 
+List.delete_all
+
+# help makes it unqiue
+@counter = 0
+
+# rating 1-5
+@nums = [1, 2, 3, 4, 5]
+
+# create it 10.times
 10.times do
   @list = List.create(
-    title: Faker::Color.color_name,
-    desc: Faker::Hipster.sentence 
+    title: "#{Faker::Hipster.word}#{@counter}",
+    desc: Faker::Hipster.sentence
   )
+  @counter += 1
+
+  # will create 3 todos for each list
   3.times do
-    Todo.create(
+    @todo = Todo.create(
       title: Faker::Food.ingredient,
-      rating: @nums.sample ,
-      price: 1.2,
+      rating: @nums.sample,
+      price: 1.50,
       complete: Faker::Boolean.boolean,
-      list_id: @list.id
+      list_id: @list.id # passing in the parents id
     )
-    
+
+    Note.create(
+      subject: Faker::Science.science,
+      body: Faker::Lorem.sentence,
+      todo_id: @todo.id # passing in the parents id
+    )
   end
+
 end
 
-#rails db:seed
+# bundle exec rails db:seed
