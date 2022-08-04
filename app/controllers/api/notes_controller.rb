@@ -22,7 +22,7 @@ class Api::NotesController < ApplicationController
     if @note.update(note_params)
       render json: @note
     else
-      render json: {errors: @note.errors},status: :unprocessable_entity
+      render json: {errors: @note.errors}, status: :unprocessable_entity
     end
   end
 
@@ -33,12 +33,14 @@ class Api::NotesController < ApplicationController
 
   private
     def note_params
-      params.require(:note).permit(:subject,:body)
+      params.require(:note).permit(:subject, :body)
     end
+
     def set_todo
       @todo = Todo.find(params[:todo_id])
     end
+
     def set_note
-      @note = @todo.notes.find(params[id])
+      @note = @todo.notes.find(params[:id])
     end
 end
