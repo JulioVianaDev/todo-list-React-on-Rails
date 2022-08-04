@@ -8,7 +8,9 @@ import Todos from './components/todos/Todos'
 import {Notes} from './components/notes/Notes'
 function App() {
   return (
-   <>
+   <><div className="dark:bg-gray-900 min-h-screen">
+
+   
    <Navbar/>
    <Routes>
     <Route path='/' element={<Home />}/>
@@ -18,7 +20,7 @@ function App() {
     <Route path='/:todoId/notes' element={<Notes/>}/>
     <Route path='/*' element={<Nomatch />}/>
    </Routes>
-   </>
+   </div></>
   );
 }
 
