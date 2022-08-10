@@ -11,7 +11,7 @@ function AboutTitle() {
           </p>
         </div>
         <div className="md:text-2xl md:min-w-250 max-w-xl shadow-2xl mt-8 	">
-          <img src={me} alt="" className="w-64 md:w-48 lg:w-48 rounded-2xl"/>
+          <img src={me} alt="" className="w-64 md:w-48 lg:w-72 mb-4 rounded-2xl"/>
         </div>
       </div>
     </>

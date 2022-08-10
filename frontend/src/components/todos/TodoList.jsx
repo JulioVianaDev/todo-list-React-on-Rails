@@ -3,7 +3,8 @@ import Todo from './Todo';
 export default function TodoList({ todos, updateTodo, deleteTodo }) {
   return(
     <>
-      <h1>All My Todos</h1>
+     <div className='grid md:grid-cols-5 grid-cols-1 m-4 lg:grid-cols-4 '>
+
       { todos.map( t => 
         <Todo
         key={t.id}
@@ -11,7 +12,8 @@ export default function TodoList({ todos, updateTodo, deleteTodo }) {
         updateTodo={updateTodo}
         deleteTodo={deleteTodo}
         />
-      )}
+        )}
+      </div>
     </>
   )
 }

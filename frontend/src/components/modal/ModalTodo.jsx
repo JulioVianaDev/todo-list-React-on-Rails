@@ -1,16 +1,7 @@
-import { useState, useEffect } from 'react';
+import React from 'react'
+function Modal({setEditing, id,list,editList,addList,setLists,todo,setTodo,setEdit,updateTodo,addTodo}) {
 
-function TodoForm({ addTodo, id, title, rating, price, complete, list_id, updateTodo, setEdit }){
-  // for boolean like complete, might not need a input for create
-  const [todo, setTodo] = useState({ title: '', rating: 1, price: 0.0, complete: false })
-
-  useEffect( () => {
-    if (id) {
-      setTodo({ title, rating, price, complete })
-    }
-  }, [])
-
-  const handleSubmit = (e) => {
+  const handleSubmitTodoModal = (e) => {
     e.preventDefault()
     // front end validations 
     // make sure the rating is a int, and price is a float
@@ -32,9 +23,8 @@ function TodoForm({ addTodo, id, title, rating, price, complete, list_id, update
   }
 
   return (
-    <>
-     
-      <form onSubmit={handleSubmit} className='mt-5 ml-5 w-2/3'>
+    <><div>
+      <form onSubmit={handleSubmitTodoModal} className='mt-5 ml-5 w-2/3'>
       <h1 className='text-4xl text-white text-start md:text-2xl	mt-4 mb-2'>{ id ? "Update" : "Create"  } Todo</h1>
         <input 
           name='title'
@@ -79,8 +69,12 @@ function TodoForm({ addTodo, id, title, rating, price, complete, list_id, update
           </div>
         <button className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'type='submit'>Submit</button>
       </form>
+          </div>
+          <div className="opacity-90 fixed inset-0 z-40 bg-black"></div>
+      
+          
     </>
   )
 }
 
-export default TodoForm;
+export default Modal
