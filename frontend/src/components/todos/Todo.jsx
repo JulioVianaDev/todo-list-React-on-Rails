@@ -19,8 +19,8 @@ export default function Todo({ id, title, price, rating, complete, list_id, upda
             list_id={list_id}
             updateTodo={updateTodo}
             setEdit={setEdit}
+            editing={editing}
           />
-          <button onClick={() => setEdit(false)}>Cancel</button>
         </>
         :
         <>

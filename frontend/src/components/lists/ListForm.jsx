@@ -35,18 +35,19 @@ function ListForm( {addList,id,title,desc,editList,setEditing } ) {
   }
 
   return (
-       <>
-        { editList ? <> 
-        <Modal
-          id={id}
-          list={list}
-          editList={editList}
-          addList={addList}
-          setLists={setLists}
-          setEditing={setEditing}
-        />
-        
-     </>: null}
+    <>
+    { editList ? <> 
+                      <Modal
+                        id={id}
+                        list={list}
+                        editList={editList}
+                        addList={addList}
+                        setLists={setLists}
+                        setEditing={setEditing}
+                      />
+                      
+                  </> : null
+      }
     <form onSubmit={handleSubmit} className='mt-5 ml-5 w-2/3'>
     <h1 className='text-4xl text-white text-start md:text-2xl	mt-4 mb-2'>Create your List</h1>
     <div className='mb-6'>

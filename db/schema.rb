@@ -14,23 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_03_132651) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "alessandros", force: :cascade do |t|
-    t.string "nome"
-    t.text "description"
-    t.integer "idade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "flavios", force: :cascade do |t|
-    t.string "nome"
-    t.integer "idade"
-    t.text "sobrenome"
-    t.boolean "vivo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lists", force: :cascade do |t|
     t.string "title"
     t.text "desc"

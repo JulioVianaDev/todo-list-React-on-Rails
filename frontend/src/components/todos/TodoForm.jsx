@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-
-function TodoForm({ addTodo, id, title, rating, price, complete, list_id, updateTodo, setEdit }){
+import ModalTodo from  '../modal/ModalTodo'
+function TodoForm({ addTodo, id, title, rating, price, complete, list_id, updateTodo, setEdit,editing }){
   // for boolean like complete, might not need a input for create
   const [todo, setTodo] = useState({ title: '', rating: 1, price: 0.0, complete: false })
-
   useEffect( () => {
     if (id) {
       setTodo({ title, rating, price, complete })
@@ -33,6 +32,19 @@ function TodoForm({ addTodo, id, title, rating, price, complete, list_id, update
 
   return (
     <>
+      {editing?
+      <ModalTodo
+      todo={todo}
+      setTodo = {setTodo}
+      id={id}
+      updateTodo={updateTodo} 
+      setEdit={setEdit}
+      addTodo={addTodo}
+      
+      />:
+      null
+        
+      }
      
       <form onSubmit={handleSubmit} className='mt-5 ml-5 w-2/3'>
       <h1 className='text-4xl text-white text-start md:text-2xl	mt-4 mb-2'>{ id ? "Update" : "Create"  } Todo</h1>

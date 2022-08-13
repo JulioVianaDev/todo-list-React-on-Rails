@@ -24,11 +24,10 @@ function Modal({setEditing, id,list,editList,addList,setLists}) {
   return (
     <>
       <div   className="justify-center w-full items-center flex fixed inset-0 z-50 ">
-                <form onSubmit={handleSubmitModal} className='mt-5 ml-5 w-2/3'>
+          <form onSubmit={handleSubmitModal} className='mt-5 ml-5 w-2/3'>
           <h1 className='text-4xl text-white text-start md:text-2xl	mt-4 mb-2'>Edit your List</h1>
           <div className='mb-6'>
             <label className='block ml-1 mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'>Your Title</label>
-
               <input
                 className='bg-gray-50 border border-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 '
                 name='title'
@@ -37,10 +36,8 @@ function Modal({setEditing, id,list,editList,addList,setLists}) {
                 required
                 placeholder='Write your List title...'
               />
-
             </div>
             <label className=' ml-1 block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'>Describe what is your list:</label>
-
               <textarea
                     className='bg-gray-50 border border-gray-900 mb-3 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 '
                     placeholder='Describe here...'
@@ -56,8 +53,6 @@ function Modal({setEditing, id,list,editList,addList,setLists}) {
             </form>
           </div>
           <div className="opacity-90 fixed inset-0 z-40 bg-black"></div>
-      
-          
     </>
   )
 }

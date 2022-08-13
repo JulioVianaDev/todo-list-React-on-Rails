@@ -1,7 +1,7 @@
 import React from 'react'
-function Modal({setEditing, id,list,editList,addList,setLists,todo,setTodo,setEdit,updateTodo,addTodo}) {
+function Modal({todo,setTodo,id,updateTodo,setEdit,addTodo}) {
 
-  const handleSubmitTodoModal = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     // front end validations 
     // make sure the rating is a int, and price is a float
@@ -12,7 +12,7 @@ function Modal({setEditing, id,list,editList,addList,setLists,todo,setTodo,setEd
       alert('Hey, rating 1 - 5 only')
     } else {
       if (id) {
-        updateTodo(id, todo)
+        updateTodo(id   , todo)
         setEdit(false)
       } else {
         // adding 
@@ -21,10 +21,12 @@ function Modal({setEditing, id,list,editList,addList,setLists,todo,setTodo,setEd
       setTodo({ title: '', rating: 1, price: 0.0, complete: false })
     }
   }
-
   return (
-    <><div>
-      <form onSubmit={handleSubmitTodoModal} className='mt-5 ml-5 w-2/3'>
+    <>
+    
+
+        <div   className="justify-center w-full items-center flex fixed inset-0 z-50 ">
+        <form onSubmit={handleSubmit} className='mt-5 ml-5 w-2/3'>
       <h1 className='text-4xl text-white text-start md:text-2xl	mt-4 mb-2'>{ id ? "Update" : "Create"  } Todo</h1>
         <input 
           name='title'
@@ -67,13 +69,14 @@ function Modal({setEditing, id,list,editList,addList,setLists,todo,setTodo,setEd
           className='ml-2 -mt-2'
           />
           </div>
-        <button className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'type='submit'>Submit</button>
+          <button className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'type='submit'>Submit</button>
+          <button className='m-3 text-white  bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800' onClick={()=>setEdit(false)}>Cancel</button>   
       </form>
-          </div>
-          <div className="opacity-90 fixed inset-0 z-40 bg-black"></div>
-      
+         </div>
+         <div className="opacity-90 fixed inset-0 z-40 bg-black"></div>
+      </>
+    
           
-    </>
   )
 }
 

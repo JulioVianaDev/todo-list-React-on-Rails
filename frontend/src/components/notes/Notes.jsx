@@ -46,6 +46,8 @@ export function Notes(){
         notes={notes} 
         deleteNote={deleteNote}
         updateNote={updateNote}
+        setNotes={setNotes}
+        
       />
     </>
   )
