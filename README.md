@@ -37,4 +37,4 @@
 
 ``` npm start ```
 
-<img src='./imagenReadme/tela.png' alt="fotodoprojeto" width="480">
+<img src='./imagenReadme/tela.png' alt="fotodoprojeto" width="720">
