@@ -1,24 +1,26 @@
-# README
+# guide to using the project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 1 clone this repository
 
-Things you may want to cover:
+```git clone git@github.com:JulioVianaDev/todo-list-React-on-Rails.git```
 
-* Ruby version
+# Backend
 
-* System dependencies
+### For upload this backend, you need first have in your computer the following items
 
-* Configuration
+```
+    * ruby 3.1.2 but you can change if you want
+    * postgresql 
+```
 
-* Database creation
+## 3 In your main directory create your database (CMD or terminal)
 
-* Database initialization
+### Remember your postgresql username and password  in config/database.yml
 
-* How to run the test suite
+``` rails db:create db:migrate ```
 
-* Services (job queues, cache servers, search engines, etc.)
+## 4 run your server
 
-* Deployment instructions
+``` rails s -p 3001 ```
 
-* ...
+# 5 frontend
