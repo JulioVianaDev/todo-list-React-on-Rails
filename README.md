@@ -36,3 +36,5 @@
 ## 3 Run the frontend 
 
 ``` npm start ```
+
+<img src='./imagenReadme/tela.png' alt="fotodoprojeto" width="480">
