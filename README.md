@@ -1,6 +1,6 @@
-# guide to using the project
+# Guide to using the project
 
-## 1 clone this repository
+## First clone this repository
 
 ```git clone git@github.com:JulioVianaDev/todo-list-React-on-Rails.git```
 
@@ -13,14 +13,26 @@
     * postgresql 
 ```
 
-## 3 In your main directory create your database (CMD or terminal)
+## 1 In your main directory create your database (CMD or terminal)
 
 ### Remember your postgresql username and password  in config/database.yml
 
 ``` rails db:create db:migrate ```
 
-## 4 run your server
+## 2 run your server (CMD or terminal)
 
 ``` rails s -p 3001 ```
 
-# 5 frontend
+# Frontend (CMD or terminal)
+
+## 1 In main directory enter the folder /frontend 
+
+``` cd frontend ```
+
+## 2 Install dependencies
+
+``` npm install ```
+
+## 3 Run the frontend 
+
+``` npm start ```
