@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :lists do
       resources :todos
     end
-    # para terceiro nivel sempre use o notes
+    # para terceiro nivel sempre use o parametro passado para não deixar a url longa
     resources :todos, except: [:index,:show, :update,:create, :destroy] do
       resources :notes
     end
